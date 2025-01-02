@@ -1,0 +1,201 @@
+@font-face {
+    font-family: 'Erch';
+    src: url('eych.ttf') format('truetype');
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* ------------------------- component style ------------------- */
+.cascader__container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+    --var-font-size: 16px;
+    --var-width: 320px;
+    --var-height: 350px;
+    --var-scale: 20;
+    --var-fs-color: red;
+    --var-fs-bg: blue;
+    --var-item-bg: white;
+    --var-item-color: black;
+    font-family: 'Erch', monospace;
+}
+
+.cascader__context {
+    width: var(--var-width);
+    height: var(--var-height);
+    min-width: 150px;
+    min-height: 200px;
+    font-size: 1em;
+    padding: 8px 5px 16px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: #ddeef275;
+    box-shadow: 0px 6px 6px rgba(13,13,13,.6);
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.cascader__component {
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.cascader__menu {
+    padding: 0 4px;
+    position: relative;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.cascader__menu_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cascader__menu_context {
+    height: 100%;
+    margin-bottom: 10px;
+    position: relative;
+    flex: none;
+    overflow: hidden;
+}
+
+.cascader__tabs {
+    position: relative;
+    font-size: 0.6em;
+    background-color: aquamarine;
+    color: brown;
+}
+
+.cascader__content {
+    margin-left: 0%;
+    position: relative;
+    height: calc(100% - 10px);
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 0.6em;
+    transition: margin-left 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.cascader-tab-pane {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    flex: 1 0 auto;
+}
+
+.cascader-select-list {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cascader-select-list-item {
+    margin-bottom: 4px;
+    background-color: var(--var-item-bg);
+    color: var(--var-item-color);
+    cursor: pointer;
+    padding: 5px 8px;
+    font-size: 1em;
+    line-height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:  relative !important;
+}
+
+
+.cascader-select-list-item.selected {
+    background-color: var(--var-fs-bg);
+    color: var(--var-fs-color);
+    font-style: italic;
+}
+
+.cascader-select-list-item:hover {
+    color: rgb(88, 86, 86);
+    box-shadow: inset 1.5px 1.5px 1px 1px #3d3d3d96;
+}
+
+
+.cascader-select-list-item-label {
+    flex: 1;
+    overflow: auto;
+    cursor: pointer;
+}
+
+.cascader-select-icon {
+    font-size: 1.2em;
+    line-height: 0;
+    display: inline-block;
+    text-align: center;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.cascader__tabs>div:first-of-type {
+    display: flex;
+    word-wrap: break-word;
+    color: rgba( 13,13,13 ,.9);
+    font-size: 1em;
+}
+
+.tab-cascader-name {
+    min-width: calc(var(--var-width) / 10);
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tab-cascader-name.selected {
+    color: blue;
+    font-weight: 700;
+}
+
+.name-cascader-tab-label {
+    width: 100%;
+    line-height: 22px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.cascader-name-slider {
+    margin-left: 0px;
+    width: 28px;
+    height: 2px;
+    background-color: blue;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+}
