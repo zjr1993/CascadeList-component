@@ -28,7 +28,7 @@ let cascader = new CascadeList(data, {tab_fontSize: 0.6, height: 300, color: {
     item_fs_color: "#0540c8", item_fs_bg: "#b1d6c5", item_bg:"#e3ca9996", item_color: "#377097"
 }});
 cascader.hook = (x) => {console.log(x)};
-document.body.append(cascader.node);
+document.body.prepend(cascader.node);
 cascader.show();
 
 // {
